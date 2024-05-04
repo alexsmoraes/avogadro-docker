@@ -8,10 +8,6 @@ How to run Avogadro 1.2 under ubuntu 18.04 using a docker container
 
 `sudo apt install docker docker-compose`
 
-3. In section "volumes" in the compose.yml file, replace PC_FOLDER by the path of the folder you want to share between your PC and the docker container, and DOCKER_FOLDER by the docker folder in which your files will be saved.
-For example, suppose you want to share the folder /home/avogadro-docker/my_files, and you want the files to be in the /home/files_from_pc in the docker container. In this case, the line would be: 
-`- /home/avogadro-docker/my_files:/home/files_from_pc`
-
 4. Execute the following commands:
 
 `docker build -t avogadro-docker .`
@@ -19,6 +15,10 @@ For example, suppose you want to share the folder /home/avogadro-docker/my_files
 `docker-compose up -d`
 
 **There you go, your container should be working by now.**
+
+**All files you want to share between your PC and your docker container must be in the 'shared' folder.**
+
+**There is an example file (benzene.xyz) inside the shared folder if you want to open it to check if everything is working.**
 
 5. To open avogadro, just type:
 
