@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  avogadro:
+    image: avogadro-docker
+    container_name: avogadro-docker
+    environment:
+      - DISPLAY=$DISPLAY
+      - XAUTHORITY=/tmp/.XAuthority
+      - QT_X11_NO_MITSHM=1
+    volumes:
+      - $XAUTHORITY:/tmp/.XAuthority
+      - PC_FOLDER:DOCKER_FOLDER
+    network_mode: host
+    ipc: host
+    tty: true
