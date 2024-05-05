@@ -8,6 +8,14 @@ How to run Avogadro 1.2 under ubuntu 18.04 using a docker container
 
 `sudo apt install docker docker-compose`
 
+3. Now you need to give your user permission to execute docker commands, otherwise you will need to run everything from now on using `sudo`. For giving those permissions, just run the following command:
+
+`sudo usermod -aG docker $USER`
+
+Now you need to restart your computer for all permissions to work. 
+
+If you want to do that later, just run the following commands as a superuser (type `sudo su` to enter root mode or use sudo in front of all docker commands below).
+
 4. Execute the following commands:
 
 `docker build -t avogadro-docker .`
@@ -42,4 +50,4 @@ How to run Avogadro 1.2 under ubuntu 18.04 using a docker container
 
 # Acknowledgements
 
-I would like to thank my friend Danilo Pinotti (https://github.com/danilopinotti/) for helping me configure this container.
+I would like to thank my friend Danilo Pinotti (https://github.com/danilopinotti/) for all the help in configuring this container.
