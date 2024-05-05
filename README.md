@@ -6,11 +6,15 @@ How to run Avogadro 1.2 under ubuntu 18.04 using a docker container
 
 2. Install docker and docker-compose: 
 
-`sudo apt install docker docker-compose`
+```
+sudo apt install docker docker-compose
+```
 
 3. Now you need to give your user permission to execute docker commands, otherwise you will need to run everything from now on using `sudo`. For giving those permissions, just run the following command:
 
-`sudo usermod -aG docker $USER`
+```
+sudo usermod -aG docker $USER
+```
 
 Now you need to restart your computer for all permissions to work. 
 
@@ -18,9 +22,13 @@ If you want to do that later, just run the following commands as a superuser (ty
 
 4. Execute the following commands:
 
-`docker build -t avogadro-docker .`
+```
+docker build -t avogadro-docker .
+```
 
-`docker-compose up -d`
+```
+docker-compose up -d
+```
 
 **There you go, your container should be working by now.**
 
@@ -30,22 +38,28 @@ If you want to do that later, just run the following commands as a superuser (ty
 
 5. To open avogadro, just type:
 
-`docker start avogadro-docker`
+```
+docker start avogadro-docker
+```
 
-`docker exec avogadro-docker avogadro`
+```
+docker exec avogadro-docker avogadro
+```
 
 6. At the end, if you want to stop your docker container from running, type
 
-`docker stop avogadro-docker`
+```
+docker stop avogadro-docker
+```
 
 7. Finally, you can add an *alias* to your .bashrc file to make things easier. For that, do the following:
 
-		1. Open your .bashrc using your preferred program (vi, nano, etc)
-		2. Add the following line to the document: alias avogadro-docker='docker start avogadro-docker; docker exec avogadro-docker avogadro' (keep the quotation marks)
-		3. Save the document
-		4. Type source ~/.bashrc
-		5. Just type avogadro-docker in the terminal and the program will open. When you close it, the docker container will also stop automatically.
-
+	1. Open your .bashrc using your preferred program (vi, nano, etc)
+	2. Add the following line to the document: alias avogadro-docker='docker start avogadro-docker; docker exec avogadro-docker avogadro' (keep the quotation marks)
+	3. Save the document
+	4. Type source ~/.bashrc
+	5. Just type avogadro-docker in the terminal and the program will open. When you close it, the docker container will also stop automatically.
+    
 ---
 
 # Acknowledgements
