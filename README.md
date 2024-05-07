@@ -55,8 +55,13 @@ docker stop avogadro-docker
 7. Finally, you can add an *alias* to your .bashrc file to make things easier. For that, do the following:
 
 	1. Open your .bashrc using your preferred program (vi, nano, etc)
-	2. Add the following line to the document: alias avogadro-docker='docker start avogadro-docker; docker exec avogadro-docker avogadro' (keep the quotation marks)
-	3. Save the document
+	2. Add the following line to the document:
+	
+  	```
+   	alias avogadro-docker='docker start avogadro-docker; docker exec avogadro-docker avogadro; docker stop avogadro-docker'
+   	```
+
+   	3. Save the document
 	4. Type source ~/.bashrc
 	5. Just type avogadro-docker in the terminal and the program will open. When you close it, the docker container will also stop automatically.
     
